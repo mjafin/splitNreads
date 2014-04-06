@@ -9,8 +9,8 @@ indicate "chimeric" alignments. Output is uncompressed BAM format that
 needs sorting and indexing.
 
 Usage:
-samtools view -h my.bam | SplitNReads.py | samtools sort - out
-splitNReads.py my.bam | samtools sort - out
+```samtools view -h my.bam | SplitNReads.py | samtools sort - out```
+```splitNReads.py my.bam | samtools sort - out```
 
 Requirements:
 pysam
