@@ -27,7 +27,7 @@ CIGAR_DICT = {0:{"seq_add": 1, "ref_add": 1}, # M
 def main(argv):
     """Reads SAM format from stdin or SAM/BAM from first argument.
     Parses any reads with splice junctions (N in CIGAR) and splits them into
-    multiple reads. 0x40 and 0x80 is set in FLAG for the 2..n fragments to 
+    multiple reads. 0x40 and 0x80 is set in FLAG for the split fragments to 
     indicate "chimeric" alignments. Output is uncompressed BAM format that 
     needs sorting and indexing.
     
@@ -37,7 +37,7 @@ def main(argv):
     """
     # default read mode: sam
     read_mode = "r" # by default input is sam
-    write_mode = "w" #bu" # write binary uncompressed bam
+    write_mode = "wbu" # write binary uncompressed bam
     out_filename = "-" # write to stdout
     if len(argv) < 2:
         # read from stdin
