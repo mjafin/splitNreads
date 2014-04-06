@@ -85,8 +85,8 @@ def main(argv):
                 a.tlen = a.tlen - my_op["ref_offset"] # dist from this reads beginning to the mate's end
             elif s.tlen < 0 and s.pnext > 0:
                 a.tlen = s.pnext - a.aend # dist from mate's beginning to this read's end
+            changeMAPQ(my_read = a, new_qual = 60)
             outfile.write(a)
-            import pdb; pdb.set_trace()
         
 def changeMAPQ(my_read, new_qual=60):
     if my_read.mapq == 255: 
