@@ -11,9 +11,9 @@ sorting and indexing.
 
 Usage:
 
-```samtools view -h my.bam | SplitNReads.py | sed 's/RG:A:/RG:Z:/g'```
+```samtools view -h my.bam | SplitNReads.py | sed 's/RG:A:/RG:Z:/g' | samtools calmd -Su - /path/to/genome.fa | samtools sort - out```
 
-```splitNReads.py my.bam | sed 's/RG:A:/RG:Z:/g' | samtools view -Suh - | samtools sort - out```
+```splitNReads.py my.bam | sed 's/RG:A:/RG:Z:/g' | samtools calmd -Su - /path/to/genome.fa | samtools sort - out```
 
 Requirements:
 pysam

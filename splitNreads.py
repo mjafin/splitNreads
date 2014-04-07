@@ -33,8 +33,8 @@ def main(argv):
     sorting and indexing. 
     
     Usage:
-    samtools view -h my.bam | SplitNReads.py | sed 's/RG:A:/RG:Z:/g'
-    splitNReads.py my.bam | sed 's/RG:A:/RG:Z:/g' | samtools view -Suh - | samtools sort - out
+    samtools view -h my.bam | SplitNReads.py | sed 's/RG:A:/RG:Z:/g' | samtools calmd -Su - /path/to/genome.fa | samtools sort - out
+    splitNReads.py my.bam | sed 's/RG:A:/RG:Z:/g' | samtools calmd -Su - /path/to/genome.fa | samtools sort - out
     """
     # default read mode: sam
     read_mode = "r" # by default input is sam
