@@ -34,7 +34,7 @@ def main(argv):
     
     Usage:
     samtools view -h my.bam | SplitNReads.py | sed 's/RG:A:/RG:Z:/g'
-    splitNReads.py my.bam | sed 's/RG:A:/RG:Z:/g' | samtools view -Sbh - | samtools sort - out
+    splitNReads.py my.bam | sed 's/RG:A:/RG:Z:/g' | samtools view -Suh - | samtools sort - out
     """
     # default read mode: sam
     read_mode = "r" # by default input is sam
