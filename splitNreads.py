@@ -65,9 +65,10 @@ def main(argv):
             copy_defaults(new = a, old = s) # copy fields that are not affected
             if is_first:
                 is_first = False
-                a.flag = a.flag|0x40|0x80 # means: not first and not last segment
+                #a.flag = a.flag|0x40|0x80 # means: not first and not last segment
             else:
-                a.flag = a.flag|0x40|0x80|0x800 # means: not first and not last segment + supplementary
+                #a.flag = a.flag|0x40|0x80|0x800 # means: not first and not last segment + supplementary
+                a.flag = a.flag|0x800 # means: supplementary, keep other flags intact
             
             # base start location in current read fragment
             start_pos = my_op["seq_start"]
