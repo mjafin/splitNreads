@@ -77,9 +77,9 @@ def main(argv):
             # fix start position
             a.pos = s.pos + my_op["ref_offset"]
             # extract bases
-            a.seq = s.seq[start_pos:start_pos+offset]
+            a.seq = s.seq[start_pos:offset]
             # extract quality values
-            a.qual = s.qual[start_pos:start_pos+offset]
+            a.qual = s.qual[start_pos:offset]
             # update CIGAR
             a.cigar = my_op["cigar"]
             # fix relative start/end position of mate
